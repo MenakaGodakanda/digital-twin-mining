@@ -2,6 +2,8 @@
 This project demonstrates the concept of a Digital Twin in the mining sector using simulated data, real-time analytics, and dynamic visualizations. It showcases how mining operations such as ore extraction and transportation can be represented, monitored, and analyzed digitally using open-source tools.
 
 ## Project Features
+<img width="1018" alt="Screenshot 2025-01-28 at 1 30 58 pm" src="https://github.com/user-attachments/assets/3078f80c-e598-4a80-8b57-d6476afa1a1a" />
+
 - **Data Simulation**: Real-time generation of mining operation data (e.g., ore extracted, truck loads, machine status).
 - **Database**: Storage of simulated data using SQLite.
 - **Backend**: A Flask web server to serve data and provide API endpoints.
