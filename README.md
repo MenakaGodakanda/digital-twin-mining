@@ -58,6 +58,7 @@ python app/data_generator.py
 This script:
 - Creates a table in `database/mining.db` if it doesn’t already exist.
 - Simulates mining data and stores it in the database.
+![Screenshot 2025-01-28 122855](https://github.com/user-attachments/assets/929bab27-9627-4b6b-9636-d9c278ce6397)
 
 ### 5. Run the Flask Application
 Start the Flask web server:
@@ -65,8 +66,8 @@ Start the Flask web server:
 export FLASK_APP=app
 flask run
 ```
-
-The server will start at http://127.0.0.1:5000.
+- The server will start at `http://127.0.0.1:5000`.
+![Screenshot 2025-01-28 123132](https://github.com/user-attachments/assets/837b87e7-d130-44bb-b16c-b9487f671363)
 
 6. Open the Dashboard
 Open your web browser and navigate to:
@@ -76,12 +77,18 @@ http://127.0.0.1:5000
 Here, you will see:
 - A real-time chart showing ore extraction data.
 - Automatic updates every 2 seconds.
+- Average Ore Extraction (Green Box):
+![Screenshot 2025-01-28 134126](https://github.com/user-attachments/assets/278d11ef-e337-4eeb-b8d3-21bccf4343ac)
+
+- Downtime Alert (Red Box):
+![Screenshot 2025-01-28 140408](https://github.com/user-attachments/assets/1c724cdd-c85e-4541-a138-632d2a79d4c9)
 
 ## API Endpoints
 - `/`: Serves the main dashboard.
 - `/api/data`: Returns the latest mining data in JSON format.
 
 Example API Response:
+![Screenshot 2025-01-28 142011](https://github.com/user-attachments/assets/008b77a7-9217-4b60-92d0-2e3652ef2f20)
 
 ## Key Features
 1. Real-Time Data Simulation:
