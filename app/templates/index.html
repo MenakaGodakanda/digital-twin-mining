@@ -3,26 +3,86 @@
 <head>
     <title>Mining Digital Twin</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .dashboard {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .alert {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .alert.success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .alert.warning {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
 </head>
 <body>
     <h1>Digital Twin: Mining Dashboard</h1>
-    <div id="chart"></div>
+    <div class="dashboard">
+        <!-- Average Ore Extraction -->
+        <div class="alert success" id="average-ore">
+            <strong>Average Ore Extraction:</strong> Loading...
+        </div>
+
+        <!-- Downtime Alert -->
+        <div class="alert warning" id="downtime-alert" style="display: none;">
+            <strong>Alert:</strong> Machine has been idle for 5 or more cycles!
+        </div>
+
+        <!-- Real-Time Chart -->
+        <div id="chart"></div>
+    </div>
 
     <script>
         async function fetchData() {
             const response = await fetch('/api/data');
-            const data = await response.json();
+            const result = await response.json();
+
+            // Update the chart
+            const data = result.data;
             const timestamps = data.map(row => row[1]);
             const oreExtracted = data.map(row => row[2]);
 
             Plotly.newPlot('chart', [{
                 x: timestamps,
                 y: oreExtracted,
-                type: 'scatter'
-            }]);
+                type: 'scatter',
+                mode: 'lines+markers',
+                marker: { color: 'blue' }
+            }], {
+                title: 'Ore Extraction Over Time',
+                xaxis: { title: 'Time' },
+                yaxis: { title: 'Ore Extracted (tons)' }
+            });
+
+            // Update average ore extraction
+            const avgElement = document.getElementById('average-ore');
+            avgElement.innerHTML = `<strong>Average Ore Extraction:</strong> ${result.average_ore_extraction} tons`;
+
+            // Update downtime alert
+            const alertElement = document.getElementById('downtime-alert');
+            if (result.downtime_alert) {
+                alertElement.style.display = 'block';
+            } else {
+                alertElement.style.display = 'none';
+            }
         }
 
-        setInterval(fetchData, 2000); // Refresh data every 2 seconds
+        // Fetch data every 2 seconds
+        setInterval(fetchData, 2000);
+        fetchData(); // Initial fetch
     </script>
 </body>
 </html>
