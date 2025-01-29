@@ -91,16 +91,23 @@ Example API Response:
 ![Screenshot 2025-01-28 142011](https://github.com/user-attachments/assets/008b77a7-9217-4b60-92d0-2e3652ef2f20)
 
 ## Key Features
-1. Real-Time Data Simulation:
-Data on ore extraction, truck load, and machine status is generated every 2 seconds.
+### 1. Real-Time Data Simulation:
+- Data on ore extraction, truck load, and machine status is generated every 2 seconds.
 
-2. Dynamic Dashboard:
-Real-time visualization using Plotly.
-Data updates without refreshing the page.
+### 2. Dynamic Dashboard:
+- Real-time visualization using Plotly.
+- Data updates without refreshing the page.
 
-3. Basic Analytics:
-Calculate the average ore extraction.
-Detect and alert on extended machine downtime.
+### 3. Basic Analytics:
+- Calculate the average ore extraction.
+- Detect and alert on extended machine downtime.
+
+## Screen Recording of Digital Twin for Mining Simulation
+### Screen Recording 01
+https://github.com/user-attachments/assets/b63aa554-c416-43a5-984f-bfcb3f8eb2c0
+
+### Screen Recording 02
+https://github.com/user-attachments/assets/cf4f581e-9272-472f-9271-dc4814c3908d
 
 ## Project Structure
 ```
