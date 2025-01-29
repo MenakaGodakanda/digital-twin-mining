@@ -104,10 +104,10 @@ Example API Response:
 
 ## Screen Recording of Digital Twin for Mining Simulation
 ### Screen Recording 01
-https://github.com/user-attachments/assets/b63aa554-c416-43a5-984f-bfcb3f8eb2c0
+https://github.com/user-attachments/assets/8d40bc3f-52f5-48e0-84b2-9e3a30146620
 
 ### Screen Recording 02
-https://github.com/user-attachments/assets/cf4f581e-9272-472f-9271-dc4814c3908d
+https://github.com/user-attachments/assets/95108c28-b0ae-47f3-83fc-41087cc292a3
 
 ## Project Structure
 ```
